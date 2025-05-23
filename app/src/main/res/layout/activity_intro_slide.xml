@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:backgroundTint="@color/black"
+    android:background="@color/black"
+    android:layout_height="match_parent"
+    tools:context=".intro_slide_act">
+
+
+    <HorizontalScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:backgroundTint="@color/black"
+        android:orientation="horizontal"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/k_stars_milky_way"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/sun"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:src="@drawable/sun" />
+
+            <Space
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/venus"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="match_parent"
+                android:src="@drawable/venus" />
+
+            <Space
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/mercury"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="match_parent"
+                android:rotation="-197"
+                android:src="@drawable/mercury" />
+
+            <Space
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/earth"
+                android:layout_width="@dimen/_82sdp"
+                android:layout_height="match_parent"
+
+                android:src="@drawable/earth" />
+
+            <Space
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/mars"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="match_parent"
+                android:rotation="-110"
+                android:src="@drawable/mars" />
+
+            <ImageView
+                android:id="@+id/jupitar"
+                android:layout_width="@dimen/_300sdp"
+                android:layout_height="match_parent"
+                android:src="@drawable/jupitar" />
+
+            <ImageView
+                android:id="@+id/saturn"
+                android:layout_width="@dimen/_220sdp"
+                android:layout_height="match_parent"
+                android:src="@drawable/saturn" />
+
+            <Space
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/neptune"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="match_parent"
+                android:rotation="-140"
+                android:src="@drawable/neptune" />
+
+            <Space
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/uranus"
+                android:layout_width="@dimen/_93sdp"
+                android:layout_height="match_parent"
+                android:rotation="-160"
+                android:src="@drawable/uranus" />
+
+            <Space
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="match_parent"/>
+
+            <ImageView
+                android:id="@+id/pluto"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="match_parent"
+                android:src="@drawable/pluto" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/to_dashboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To Dashboard..."
+        android:textColor="@color/white"
+        android:fontFamily="@font/inter"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:textSize="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@+id/pannel"
+        app:layout_constraintStart_toStartOf="@id/pannel" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pannel"
+        android:padding="@dimen/_11sdp"
+        android:layout_width="@dimen/_270sdp"
+        android:layout_height="@dimen/_105sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="@drawable/transparent_back">
+
+        <TextView
+            android:id="@+id/id_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/grad_straight"
+            android:padding="@dimen/_8sdp"
+            android:text="@string/sun"
+            android:fontFamily="@font/inter"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="@font/inter"
+            android:layout_marginEnd="@dimen/_14sdp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/id_card"
+            app:layout_constraintBottom_toBottomOf="@id/id_card"
+            android:textSize="@dimen/_14sdp"
+            android:text="SUN"/>
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter"
+            android:layout_marginEnd="@dimen/_14sdp"
+            android:text="Explore more..."
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/wrong"
+            android:layout_marginEnd="@dimen/_3sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView10"
+            app:layout_constraintEnd_toStartOf="@+id/textView10"
+            app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+        <ImageView
+            android:id="@+id/play"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:src="@drawable/play"
+            app:layout_constraintBottom_toTopOf="@+id/textView10"
+            app:layout_constraintEnd_toEndOf="@+id/name"
+            app:layout_constraintStart_toStartOf="@+id/name"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

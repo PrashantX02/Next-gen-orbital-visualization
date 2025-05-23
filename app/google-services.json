@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "436374905665",
+    "firebase_url": "https://msng-cc473-default-rtdb.firebaseio.com",
+    "project_id": "msng-cc473",
+    "storage_bucket": "msng-cc473.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436374905665:android:f9d99b8da17c44ea37f7c0",
+        "android_client_info": {
+          "package_name": "com.pain.space"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpJoG8zHaxN0HIDNaEdutxkB1FFX8fmoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

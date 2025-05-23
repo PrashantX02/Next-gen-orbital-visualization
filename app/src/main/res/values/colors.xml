@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="light_black">#121212</color>
+    <color name="purple">#DD90D8</color>
+    <color name="blue">#4419B9</color>
+    <color name="fig_ma_black">#211F1F</color>
+    <color name="fig_ma_orange">#FF540B</color>
+    <color name="fig_ma_dull_white">#C8C8C8</color>
+    <color name="fig_ma_dull_white2">#FFFCFF</color>
+    <color name="fig_ma_lightBlack">#232323</color>
+    <color name="fig_ma_radium">#0BDEFF</color>
+    <color name="grey_and_white">#C5C5C5</color>
+    <color name="rise_blue">#6132e3</color>
+</resources>

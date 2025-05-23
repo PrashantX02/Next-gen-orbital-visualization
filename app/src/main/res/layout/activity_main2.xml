@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:background="@drawable/k_stars_milky_way"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <ScrollView
+        android:padding="@dimen/_7sdp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:fontFamily="@font/inter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/grey_and_white"
+                    android:text="  Geetings,\n  Goutham HM"/>
+
+                <Space
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:src="@drawable/profile"/>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"/>
+
+            <TextView
+                android:fontFamily="@font/inter"
+                android:layout_width="match_parent"
+                android:text=" Let’s travel\n the universe ✨"
+                android:textColor="@color/white"
+                android:layout_height="match_parent"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:layout_marginStart="@dimen/_7sdp"
+                android:background="@drawable/p_back_2"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_2sdp"/>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="465dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_310sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:src="@drawable/black_rect"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="@dimen/_160sdp"
+                    android:layout_height="@dimen/_160sdp"
+                    android:layout_marginTop="@dimen/_39sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:rotation="-2"
+                    android:src="@drawable/mars"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:fontFamily="@font/inter"
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:text="visualization"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:paddingLeft="@dimen/_7sdp"
+                    android:paddingRight="@dimen/_7sdp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/grade_back_purple"
+                    android:textSize="17sp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:src="@drawable/view"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView"
+                    app:layout_constraintStart_toEndOf="@+id/textView"
+                    app:layout_constraintTop_toTopOf="@+id/textView" />
+
+                <TextView
+                    android:fontFamily="@font/inter"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:text="Planet"
+                    android:textColor="@color/grey_and_white"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+                <TextView
+                    android:fontFamily="@font/inter"
+                    android:id="@+id/textView2"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="Moon"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="@+id/textView3"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+                <TextView
+                    android:fontFamily="@font/inter"
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_100sdp"
+                    android:text="Duration"
+                    android:textColor="@color/grey_and_white"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView3"
+                    app:layout_constraintStart_toEndOf="@+id/textView3"
+                    app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+                <TextView
+                    android:fontFamily="@font/inter"
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="3 Days"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView4"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+                <TextView
+                    android:fontFamily="@font/inter"
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:text="Info from"
+                    android:textColor="@color/grey_and_white"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                <TextView
+                    android:fontFamily="@font/inter"
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="N A S A"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView5"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+                <TextView
+                    android:fontFamily="@font/inter"
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Project cost"
+                    android:textColor="@color/grey_and_white"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView5"
+                    app:layout_constraintStart_toStartOf="@+id/textView8"
+                    app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+                <TextView
+                    android:fontFamily="@font/inter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="150 cr."
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView7"
+                    app:layout_constraintStart_toStartOf="@+id/textView6"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_20sdp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/textView9"
+                    android:layout_width="@dimen/_130sdp"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:background="@drawable/grade_back_purple"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Major Ores &amp; Minerals"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="• Ilmenite (FeTiO₃) – Contains iron, titanium, and oxygen.\n&#10;• Olivine ((Mg, Fe)₂SiO₄) – A common silicate mineral.\n&#10;• Pyroxene ((Mg, Fe, Ca)SiO₃) – Found in basaltic rocks.\n&#10;• Anorthosite – Rich in plagioclase feldspar.\n&#10;• Spinel Group – Contains magnesium, aluminum, and iron oxides."
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:paddingTop="4dp"/>
+                </LinearLayout>
+
+
+                <ImageView
+                    android:layout_width="@dimen/_115sdp"
+                    android:layout_height="@dimen/_170sdp"
+                    android:src="@drawable/scope"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"/>
+            <TextView
+                android:fontFamily="@font/inter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:padding="@dimen/_10sdp"
+                android:gravity="start"
+                android:textSize="12sp"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:textColor="@color/white"
+                android:background="@drawable/dark_pestal_blue"
+                android:text="• The Moon is Earth's only natural satellite.\n\n• It has no atmosphere, so there is no weather.\n\n• The Moon is tidally locked to Earth.\n\n• It takes 27.3 days to orbit Earth.\n\n• The Moon influences Earth's tides.\n\n• Lunar maria are dark plains from volcanic eruptions.\n\n• Neil Armstrong was the first to walk on the Moon.\n\n• The surface temperature varies from -173°C to 127°C.\n\n• The Moon has water ice in shadowed craters.\n\n• The Moon experiences moonquakes.\n\n• It formed about 4.5 billion years ago." />
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"/>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
