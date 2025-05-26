@@ -45,11 +45,14 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
+    implementation("androidx.work:work-runtime-ktx:2.8.1")
     implementation(libs.androidx.constraintlayout)
     implementation("androidx.webkit:webkit:1.13.0")
     implementation("com.intuit.sdp:sdp-android:1.1.1")
     implementation("com.airbnb.android:lottie:6.6.4")
     implementation("com.github.AtifSayings:Animatoo:1.0.1")
+    implementation(platform("com.google.firebase:firebase-bom:32.2.0"))
+    //implementation("com.google.firebase:firebase-appcheck-ktx")
     implementation("com.github.ibrahimsn98:SmoothBottomBar:1.7.9")
     implementation(project(":mylibrary"))
     implementation("com.github.qamarelsafadi:CurvedBottomNavigation:0.1.3")
@@ -60,5 +63,11 @@ dependencies {
     implementation(libs.firebase.database)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
+    implementation("com.google.firebase:firebase-functions-ktx:20.2.0")
     androidTestImplementation(libs.androidx.espresso.core)
+
+// Kotlin Coroutines core and Android
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
 }

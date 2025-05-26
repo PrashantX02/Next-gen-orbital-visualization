@@ -1,17 +1,31 @@
 package com.pain.space
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.animation.LinearInterpolator
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.work.Data
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
+import com.pain.space.bottom_sheet_fragment.comment_sheetFragment
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.values
+import com.google.firebase.functions.FirebaseFunctions
 import com.pain.space.model.swipe_card_model
 import com.pain.space.recyclerViews_and_adapter.CardStackAdapter
+import com.pain.space.services.ViewCountService
 import com.qamar.curvedbottomnaviagtion.log
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
@@ -27,7 +41,12 @@ import resources_of_main_data.event_roswell
 class swipe_card : AppCompatActivity() {private lateinit var manager: CardStackLayoutManager
     private lateinit var cardStackAdapter: CardStackAdapter
     private lateinit var cardStackView: CardStackView
+    private lateinit var watching : TextView
 
+    private val functions = FirebaseFunctions.getInstance()
+
+    private  val  db = FirebaseDatabase.getInstance()
+    private lateinit var key_default_watch : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +59,44 @@ class swipe_card : AppCompatActivity() {private lateinit var manager: CardStackL
         }
 
         cardStackView = findViewById(R.id.cardStackView)
+        watching = findViewById(R.id.textView28)
+
+        FirebaseApp.initializeApp(this)
+
+        val key = intent.getStringExtra("ev")
+
+        key_default_watch  = when (key) {
+            "1" -> "default_card_1"
+            "2" -> "default_card_2"
+            "3" -> "default_card_3"
+            "4" -> "default_card_4"
+            else -> ""
+        }
+
+        Log.d("planet", "watching: "+key_default_watch)
+
+        val db = FirebaseDatabase.getInstance()
+
+
+        db.reference
+            .child(key_default_watch).get()
+            .addOnSuccessListener { snapshot ->
+                Log.d("planet", "enter")
+                if (snapshot.exists()) {
+                    var value : Int = snapshot.getValue(Int::class.java)  ?: 0
+                    value++
+                    Log.d("planet", "watching_val: $value")
+                    watching.text = value.toString() + " watching"
+
+                    db.reference.child(key_default_watch).setValue(value)
+                } else {
+                    Log.d("planet", "No data found at $key_default_watch")
+                }
+            }
+            .addOnFailureListener { error ->
+                Log.e("planet", "Firebase get failed: ${error.message}")
+            }
+
 
         manager = CardStackLayoutManager(this, object : CardStackListener {
             override fun onCardDragging(direction: Direction, ratio: Float) {
@@ -66,7 +123,11 @@ class swipe_card : AppCompatActivity() {private lateinit var manager: CardStackL
             override fun onCardCanceled() {}
             override fun onCardAppeared(view: View, position: Int) {}
             override fun onCardDisappeared(view: View, position: Int) {}
+
         })
+
+        val comment_sheetFragment = comment_sheetFragment()
+        comment_sheetFragment.show(supportFragmentManager,comment_sheetFragment?.tag)
 
         manager.setStackFrom(StackFrom.None)
         manager.setVisibleCount(3)
@@ -95,6 +156,10 @@ class swipe_card : AppCompatActivity() {private lateinit var manager: CardStackL
         if(key.equals("1")){
             str = event_area_51.area_51
             list.add(swipe_card_model("Area-51", event_area_51.area_51_description,"",R.drawable.area51))
+
+
+
+
         } else if(key.equals("2")){
             str = event_planetX.planet_x
             list.add(swipe_card_model("Planet-x", event_planetX.planet_x_description,"",R.drawable.planet_x))
@@ -106,8 +171,6 @@ class swipe_card : AppCompatActivity() {private lateinit var manager: CardStackL
             list.add(swipe_card_model("knight black", event_black.knight_black_description,"",R.drawable.black_knight))
         }
 
-
-       Log.d("planet","${key}")
         while (str.length >= 1500){
             list.add(swipe_card_model("","",str.substring(0,1500),-1))
             str = str.substring(1500)
@@ -116,4 +179,16 @@ class swipe_card : AppCompatActivity() {private lateinit var manager: CardStackL
 
         return list
     }
+
+    override fun onStop() {
+        val serviceIntent = Intent(this, ViewCountService::class.java)
+        serviceIntent.putExtra("key", key_default_watch)
+        startService(serviceIntent)
+        super.onStop()
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+    }
+
+
 }
