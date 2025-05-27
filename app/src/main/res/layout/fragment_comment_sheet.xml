@@ -1,17 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/bottom_up_root"
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="bottom_sheet_fragment.comment_sheetFragment"
+    tools:context="sheet_fragment.comment_sheetFragment"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
     android:animateLayoutChanges="true">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:elevation="@dimen/_2sdp"
+        android:background="@color/fig_ma_black"
+        android:backgroundTint="@color/fig_ma_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:background="@color/fig_ma_black"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:fontFamily="@font/inter"
+            android:gravity="center_vertical"
+            android:text="Live Chat  🔴"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/comments"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_300sdp"
+        android:layout_height="@dimen/_297sdp"
+        android:layout_gravity="center"
         android:text="Hello from bottom up!"
-        android:layout_gravity="center" />
-</FrameLayout>
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout8"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2"
+        tools:listitem="@layout/comment_card" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_4sdp"
+        android:background="@drawable/comment_back_up"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/back_edit_text"
+            android:hint="say something ...."
+            android:paddingLeft="@dimen/_11sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textColorHint="@color/black"
+            android:layout_marginEnd="@dimen/_7sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/sent_comment"
+            app:layout_constraintEnd_toStartOf="@+id/sent_comment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/sent_comment" />
+
+        <ImageView
+            android:id="@+id/sent_comment"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/sent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

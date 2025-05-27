@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/_90sdp"
+    android:background="@drawable/grade_back_purple"
+    android:layout_height="@dimen/_250sdp"
+    tools:context=".sheet_fragment.views_fragment">
+
+</FrameLayout>

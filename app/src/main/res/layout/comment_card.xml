@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageView33"
+        android:layout_width="@dimen/_17sdp"
+        android:layout_height="@dimen/_17sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:src="@drawable/person"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:fontFamily="@font/inter"
+        android:text="Prashant Kumar | 5 week"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView33"
+        app:layout_constraintStart_toEndOf="@+id/imageView33"
+        app:layout_constraintTop_toTopOf="@+id/imageView33" />
+
+    <ImageView
+        android:id="@+id/imageView34"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:src="@drawable/emotion"
+        app:layout_constraintBottom_toBottomOf="@+id/textView31"
+        app:layout_constraintStart_toEndOf="@+id/textView31"
+        app:layout_constraintTop_toTopOf="@+id/textView31" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:textColor="@color/black"
+        android:background="@drawable/comment_background"
+        android:fontFamily="@font/inter"
+        android:padding="@dimen/_10sdp"
+        android:text="This is insane !!"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView34"
+        app:layout_constraintStart_toStartOf="@+id/textView31"
+        app:layout_constraintTop_toBottomOf="@+id/imageView33" />
+
+    <Space
+        android:id="@+id/space"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/textView30"
+        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:background="@color/white"
+        android:visibility="visible"
+        android:layout_marginEnd="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:cardElevation="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/space"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView30"
+        app:layout_constraintTop_toTopOf="@+id/space">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:padding="@dimen/_5sdp">
+
+
+            <ImageView
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/chk" />
+
+            <Space
+                android:layout_width="@dimen/_9sdp"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/confused" />
+
+            <Space
+                android:layout_width="@dimen/_9sdp"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/confused" />
+
+            <Space
+                android:layout_width="@dimen/_9sdp"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/cool" />
+
+            <Space
+                android:layout_width="@dimen/_9sdp"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/angry" />
+
+            <Space
+                android:layout_width="@dimen/_9sdp"
+                android:layout_height="wrap_content" />
+
+
+            <ImageView
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/facebook_reactions" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Space
+        android:id="@+id/space2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/grid_emotion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/emotion_background"
+        android:padding="@dimen/_10sdp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView30"
+        app:layout_constraintTop_toBottomOf="@+id/textView30"
+        app:layout_goneMarginTop="@dimen/_50sdp">
+
+        <!-- First row: starts here -->
+
+        <ImageView
+            android:id="@+id/emoji1"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:src="@drawable/chk"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/emoji2"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:src="@drawable/confused"
+            app:layout_constraintStart_toEndOf="@id/emoji1"
+            app:layout_constraintTop_toTopOf="@+id/emoji1" />
+
+        <ImageView
+            android:id="@+id/emoji3"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:src="@drawable/confused"
+            app:layout_constraintStart_toEndOf="@id/emoji2"
+            app:layout_constraintTop_toTopOf="@+id/emoji2" />
+
+        <ImageView
+            android:id="@+id/emoji4"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:src="@drawable/cool"
+            app:layout_constraintStart_toEndOf="@id/emoji3"
+            app:layout_constraintTop_toTopOf="@+id/emoji3" />
+
+        <ImageView
+            android:id="@+id/emoji5"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:src="@drawable/angry"
+            app:layout_constraintStart_toEndOf="@id/emoji4"
+            app:layout_constraintTop_toTopOf="@+id/emoji4" />
+
+        <ImageView
+            android:id="@+id/emoji6"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:src="@drawable/facebook_reactions"
+            app:layout_constraintStart_toEndOf="@id/emoji5"
+            app:layout_constraintTop_toTopOf="@+id/emoji5" />
+
+        <ImageView
+            android:id="@+id/emoji7"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:src="@drawable/sad"
+            app:layout_constraintStart_toEndOf="@id/emoji6"
+            app:layout_constraintTop_toTopOf="@+id/emoji6" />
+
+        <!-- Second row: starts here -->
+
+        <ImageView
+            android:id="@+id/emoji8"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/sad_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emoji1" />
+
+        <ImageView
+            android:id="@+id/emoji9"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:src="@drawable/neutral"
+            app:layout_constraintStart_toEndOf="@id/emoji8"
+            app:layout_constraintTop_toTopOf="@+id/emoji8" />
+
+        <ImageView
+            android:id="@+id/emoji10"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:src="@drawable/science"
+            app:layout_constraintStart_toEndOf="@id/emoji9"
+            app:layout_constraintTop_toTopOf="@+id/emoji9" />
+
+        <ImageView
+            android:id="@+id/emoji11"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:src="@drawable/einstein"
+            app:layout_constraintStart_toEndOf="@id/emoji10"
+            app:layout_constraintTop_toTopOf="@+id/emoji10" />
+
+        <ImageView
+            android:id="@+id/emoji12"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:src="@drawable/sport_car"
+            app:layout_constraintStart_toEndOf="@id/emoji11"
+            app:layout_constraintTop_toTopOf="@+id/emoji11" />
+
+        <ImageView
+            android:id="@+id/emoji13"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:src="@drawable/startup"
+            app:layout_constraintStart_toEndOf="@id/emoji12"
+            app:layout_constraintTop_toTopOf="@+id/emoji12" />
+
+        <ImageView
+            android:id="@+id/emoji14"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:src="@drawable/chemistry"
+            app:layout_constraintStart_toEndOf="@id/emoji13"
+            app:layout_constraintTop_toTopOf="@+id/emoji13" />
+
+
+        <!-- Third row: starts here -->
+
+        <ImageView
+            android:id="@+id/emoji15"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/galaxy_"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emoji8" />
+
+        <ImageView
+            android:id="@+id/emoji16"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:src="@drawable/angry_birds"
+            app:layout_constraintStart_toEndOf="@id/emoji15"
+            app:layout_constraintTop_toTopOf="@id/emoji15" />
+
+        <ImageView
+            android:id="@+id/emoji17"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:src="@drawable/tesla"
+            app:layout_constraintStart_toEndOf="@id/emoji16"
+            app:layout_constraintTop_toTopOf="@id/emoji16" />
+
+        <ImageView
+            android:id="@+id/emoji18"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:src="@drawable/gravity"
+            app:layout_constraintStart_toEndOf="@id/emoji17"
+            app:layout_constraintTop_toTopOf="@id/emoji17" />
+
+        <ImageView
+            android:id="@+id/emoji19"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:src="@drawable/isaac_newton"
+            app:layout_constraintStart_toEndOf="@id/emoji18"
+            app:layout_constraintTop_toTopOf="@id/emoji18" />
+
+        <ImageView
+            android:id="@+id/emoji20"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:src="@drawable/astronaut"
+            app:layout_constraintStart_toEndOf="@id/emoji19"
+            app:layout_constraintTop_toTopOf="@id/emoji19" />
+
+        <ImageView
+            android:id="@+id/emoji21"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:src="@drawable/planet"
+            app:layout_constraintStart_toEndOf="@id/emoji20"
+            app:layout_constraintTop_toTopOf="@id/emoji20" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

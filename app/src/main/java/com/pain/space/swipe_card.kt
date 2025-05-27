@@ -5,28 +5,20 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.animation.LinearInterpolator
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.work.Data
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.WorkManager
-import com.pain.space.bottom_sheet_fragment.comment_sheetFragment
+import com.pain.space.sheet_fragment.comment_sheetFragment
 import com.google.firebase.FirebaseApp
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.values
 import com.google.firebase.functions.FirebaseFunctions
 import com.pain.space.model.swipe_card_model
 import com.pain.space.recyclerViews_and_adapter.CardStackAdapter
 import com.pain.space.services.ViewCountService
-import com.qamar.curvedbottomnaviagtion.log
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.CardStackView
@@ -60,6 +52,9 @@ class swipe_card : AppCompatActivity() {private lateinit var manager: CardStackL
 
         cardStackView = findViewById(R.id.cardStackView)
         watching = findViewById(R.id.textView28)
+        var com : ImageView = findViewById(R.id.comments)
+
+
 
         FirebaseApp.initializeApp(this)
 
@@ -126,9 +121,6 @@ class swipe_card : AppCompatActivity() {private lateinit var manager: CardStackL
 
         })
 
-        val comment_sheetFragment = comment_sheetFragment()
-        comment_sheetFragment.show(supportFragmentManager,comment_sheetFragment?.tag)
-
         manager.setStackFrom(StackFrom.None)
         manager.setVisibleCount(3)
         manager.setTranslationInterval(0.0f)
@@ -145,6 +137,14 @@ class swipe_card : AppCompatActivity() {private lateinit var manager: CardStackL
         cardStackView.layoutManager = manager
         cardStackView.adapter = cardStackAdapter
         cardStackView.itemAnimator = DefaultItemAnimator()
+
+
+        // Comment handling
+
+        com.setOnClickListener {
+            val comment_sheetFragment = comment_sheetFragment()
+            comment_sheetFragment.show(supportFragmentManager,comment_sheetFragment?.tag)
+        }
 
     }
 
