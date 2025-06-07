@@ -1,30 +1,32 @@
 package com.pain.space.model
 
 data class Comment(
-    val username: String,
-    val timeAgo: String,
-    val commentText: String,
+    var uid: String = "",
+    var username: String = "",
+    var timeAgo: String = "",
+    var commentText: String = "",
 
     // Emotion drawable resources
-    val chk: Int,
-    val confused: Int,
-    val cool: Int,
-    val angry: Int,
-    val facebookReactions: Int,
-    val sad: Int,
-    val sad2: Int,
-    val neutral: Int,
-    val science: Int,
-    val einstein: Int,
-    val sportCar: Int,
-    val startup: Int,
-    val chemistry: Int,
-    val galaxy: Int,
-    val angryBirds: Int,
-    val tesla: Int,
-    val gravity: Int,
-    val isaacNewton: Int,
-    val astronaut: Int,
-    val planet: Int
+    var chk: Int = 0,
+    var confused: Int = 0,
+    var cool: Int = 0,
+    var angry: Int = 0,
+    var facebookReactions: Int = 0,
+    var sad: Int = 0,
+    var sad2: Int = 0,
+    var neutral: Int = 0,
+    var science: Int = 0,
+    var einstein: Int = 0,
+    var sportCar: Int = 0,
+    var startup: Int = 0,
+    var chemistry: Int = 0,
+    var galaxy: Int = 0,
+    var angryBirds: Int = 0,
+    var tesla: Int = 0,
+    var gravity: Int = 0,
+    var isaacNewton: Int = 0,
+    var astronaut: Int = 0,
+    var planet: Int = 0
 )
+
 

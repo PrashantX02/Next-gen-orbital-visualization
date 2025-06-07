@@ -12,7 +12,7 @@ class ViewCountService : Service() {
 
         Thread {
             val db = FirebaseDatabase.getInstance()
-            val ref = db.reference.child(key)
+            val ref = db.reference.child(key).child("live_views")
             ref.get().addOnSuccessListener { snapshot ->
                 val value = snapshot.getValue(Int::class.java) ?: 0
                 ref.setValue(value - 1)

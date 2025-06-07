@@ -73,25 +73,7 @@ class swipe_card : AppCompatActivity() {private lateinit var manager: CardStackL
         val db = FirebaseDatabase.getInstance()
 
 
-        db.reference
-            .child(key_default_watch).get()
-            .addOnSuccessListener { snapshot ->
-                Log.d("planet", "enter")
-                if (snapshot.exists()) {
-                    var value : Int = snapshot.getValue(Int::class.java)  ?: 0
-                    value++
-                    Log.d("planet", "watching_val: $value")
-                    watching.text = value.toString() + " watching"
-
-                    db.reference.child(key_default_watch).setValue(value)
-                } else {
-                    Log.d("planet", "No data found at $key_default_watch")
-                }
-            }
-            .addOnFailureListener { error ->
-                Log.e("planet", "Firebase get failed: ${error.message}")
-            }
-
+        increaseViewCount()
 
         manager = CardStackLayoutManager(this, object : CardStackListener {
             override fun onCardDragging(direction: Direction, ratio: Float) {
@@ -142,7 +124,7 @@ class swipe_card : AppCompatActivity() {private lateinit var manager: CardStackL
         // Comment handling
 
         com.setOnClickListener {
-            val comment_sheetFragment = comment_sheetFragment()
+            val comment_sheetFragment = comment_sheetFragment(key_default_watch)
             comment_sheetFragment.show(supportFragmentManager,comment_sheetFragment?.tag)
         }
 
@@ -156,8 +138,6 @@ class swipe_card : AppCompatActivity() {private lateinit var manager: CardStackL
         if(key.equals("1")){
             str = event_area_51.area_51
             list.add(swipe_card_model("Area-51", event_area_51.area_51_description,"",R.drawable.area51))
-
-
 
 
         } else if(key.equals("2")){
@@ -190,5 +170,33 @@ class swipe_card : AppCompatActivity() {private lateinit var manager: CardStackL
         super.onDestroy()
     }
 
+    fun increaseViewCount(){
+        db.reference
+            .child(key_default_watch).child("live_views").get()
+            .addOnSuccessListener { snapshot ->
+                Log.d("planet", "enter")
+                if (snapshot.exists()) {
+                    var value : Int = snapshot.getValue(Int::class.java)  ?: 0
+                    value++
+                    Log.d("planet", "watching_val: $value")
+                    watching.text = value.toString() + " watching"
+
+                } else {
+                    Log.d("planet", "No data found at $key_default_watch")
+                    watching.text =  "1 watching"
+                }
+
+                db.reference.child(key_default_watch).child("live_views").setValue(1)
+            }
+            .addOnFailureListener { error ->
+                Log.e("planet", "Firebase get failed: ${error.message}")
+            }
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+        increaseViewCount()
+    }
 
 }
